@@ -66,8 +66,8 @@ export default function ProjectPage() {
         </div>
       </header>
 
-      <main className="container py-10">
-        <div className="mb-8">
+      <main className="container py-6 md:py-10">
+        <div className="mb-6 md:mb-8">
           <Link
             href="/#projects"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors group"
@@ -78,16 +78,16 @@ export default function ProjectPage() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           <div className="md:col-span-2">
-            <h1 className="text-3xl md:text-4xl font-bold mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3">
               {project.title}
             </h1>
-            <p className="text-xl text-muted-foreground mb-6">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 md:mb-6">
               {project.details.subtitle}
             </p>
 
-            <div className="rounded-lg overflow-hidden mb-8">
+            <div className="rounded-lg overflow-hidden mb-6 md:mb-8">
               <Image
                 src={project.image || "/placeholder.svg"}
                 width={1200}
@@ -98,10 +98,12 @@ export default function ProjectPage() {
             </div>
 
             <div className="prose max-w-none">
-              <p className="text-lg mb-8">{project.details.description}</p>
+              <p className="text-base md:text-lg mb-6 md:mb-8">
+                {project.details.description}
+              </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <a
                 href="https://github.com/Hdidogs/ProjetAeroport"
                 target="_blank"
@@ -115,14 +117,17 @@ export default function ProjectPage() {
             </div>
           </div>
 
-          <div>
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-4">
+          <div className="space-y-4 md:space-y-6">
+            <div className="bg-muted rounded-lg p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
                 Fonctionnalités Clés
               </h3>
               <ul className="space-y-2">
                 {project.details.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
+                  <li
+                    key={index}
+                    className="flex items-start text-sm md:text-base"
+                  >
                     <span className="mr-2">•</span>
                     <span>{feature}</span>
                   </li>
@@ -130,13 +135,16 @@ export default function ProjectPage() {
               </ul>
             </div>
 
-            <div className="bg-muted rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">
+            <div className="bg-muted rounded-lg p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
                 Technologies Utilisées
               </h3>
               <ul className="space-y-2">
                 {project.details.technologies.map((tech, index) => (
-                  <li key={index} className="flex items-start">
+                  <li
+                    key={index}
+                    className="flex items-start text-sm md:text-base"
+                  >
                     <span className="mr-2">•</span>
                     <span>{tech}</span>
                   </li>
@@ -147,7 +155,7 @@ export default function ProjectPage() {
         </div>
       </main>
 
-      <footer className="border-t py-10 mt-20">
+      <footer className="border-t py-6 md:py-10 mt-12 md:mt-20">
         <div className="container flex flex-col md:flex-row justify-between items-center">
           <div className="font-bold text-xl mb-4 md:mb-0">
             <span className="text-primary">A</span>S

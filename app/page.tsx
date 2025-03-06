@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,6 +19,8 @@ import {
   Globe,
   MapPin,
   Download,
+  Menu,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -133,6 +136,7 @@ type Experience = {
 };
 
 export default function Portfolio() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const _sectionRefs = {
     about: useRef(null),
     projects: useRef(null),
@@ -188,11 +192,13 @@ export default function Portfolio() {
         <div className="container flex h-16 items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-bold text-xl hover:opacity-80 transition-opacity"
+            className="font-bold text-base md:text-lg hover:opacity-80 transition-opacity"
           >
-            <span className="text-primary">A</span>S
+            <span className="text-primary">Samy</span> Abdelmalek
           </button>
-          <nav className="flex gap-6">
+
+          {/* Navigation pour desktop */}
+          <nav className="hidden md:flex gap-6">
             <button
               onClick={() => scrollToSection("about")}
               className="text-sm font-medium hover:text-primary transition-colors"
@@ -218,16 +224,87 @@ export default function Portfolio() {
               Contact
             </button>
           </nav>
+
+          {/* Bouton menu hamburger pour mobile */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
           <a
             href="/icons/Cv_AbdelmalekSamy_LettreMotivation.pdf"
             download
-            className="inline-flex"
+            className="hidden md:inline-flex"
           >
             <Button>
               <Download className="mr-2 h-4 w-4" /> CV
             </Button>
           </a>
         </div>
+
+        {/* Menu mobile */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-16 left-0 right-0 bg-background border-b"
+          >
+            <div className="container py-4 flex flex-col gap-4">
+              <button
+                onClick={() => {
+                  scrollToSection("about");
+                  setIsMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                À propos
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("projects");
+                  setIsMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                Projets
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("experiences");
+                  setIsMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                Expériences
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("contact");
+                  setIsMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                Contact
+              </button>
+              <a
+                href="/icons/Cv_AbdelmalekSamy_LettreMotivation.pdf"
+                download
+                className="inline-flex"
+              >
+                <Button className="w-full">
+                  <Download className="mr-2 h-4 w-4" /> CV
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        )}
       </header>
 
       <main className="container py-10">
@@ -237,38 +314,36 @@ export default function Portfolio() {
         {/* About Section */}
         <AnimatedSection
           id="about"
-          className="py-20 bg-white overflow-hidden relative scroll-mt-20"
+          className="py-12 md:py-20 bg-white overflow-hidden relative scroll-mt-20"
           variants={fadeIn}
         >
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.h2
               variants={fadeIn}
-              className="text-4xl font-bold mb-8 text-center"
+              className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-center"
             >
               À propos de moi
             </motion.h2>
-            <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
               <motion.div
                 variants={slideIn}
-                className="md:w-1/2 mb-8 md:mb-0 px-4 md:px-8"
+                className="w-full md:w-1/2 px-4 md:px-8"
               >
-                <p className="text-lg text-gray-800 leading-relaxed mb-6 text-justify">
+                <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-6 text-justify">
                   Passionné par le développement et en constante évolution, je
                   suis un développeur junior déterminé à perfectionner mes
                   compétences. Actuellement, je me spécialise en React et HTML
                   pour le frontend, ainsi qu'en Python et PHP pour le backend.
                 </p>
-                <p className="text-lg text-gray-800 leading-relaxed text-justify">
-                  J&apos;ai également de l&apos;expérience avec les bases de
-                  données MongoDB et MySQL, ce qui me permet de concevoir des
-                  applications complètes et optimisées. Mon objectif ? Devenir
-                  un développeur polyvalent et performant, prêt à relever de
-                  nouveaux défis.
+                <p className="text-base md:text-lg text-gray-800 leading-relaxed text-justify">
+                  J'ai également de l'expérience avec les bases de données
+                  MongoDB et MySQL, ce qui me permet de concevoir des
+                  applications complètes et optimisées.
                 </p>
               </motion.div>
               <motion.div
                 variants={staggerContainer}
-                className="md:w-1/2 grid grid-cols-2 gap-6 px-4 md:px-8"
+                className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 px-4 md:px-8"
               >
                 {[
                   {
@@ -354,33 +429,36 @@ export default function Portfolio() {
         {/* Projects Section */}
         <AnimatedSection
           id="projects"
-          className="py-20 scroll-mt-20"
+          className="py-12 md:py-20 scroll-mt-20"
           variants={fadeIn}
         >
-          <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-4">
+          <motion.h2
+            variants={fadeIn}
+            className="text-2xl md:text-3xl font-bold mb-3 md:mb-4"
+          >
             Projets Récents
           </motion.h2>
           <motion.p
             variants={fadeIn}
-            className="text-muted-foreground mb-10 max-w-[800px]"
+            className="text-muted-foreground mb-8 md:mb-10 max-w-[800px] text-sm md:text-base"
           >
             Une sélection de mes travaux récents sur des applications et des
             sites web.
           </motion.p>
 
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="mb-8">
+            <TabsList className="mb-6 md:mb-8 flex flex-wrap gap-2">
               <TabsTrigger value="all">Tous</TabsTrigger>
               <TabsTrigger value="application">Applications</TabsTrigger>
               <TabsTrigger value="web">Sites Web</TabsTrigger>
             </TabsList>
-            <TabsContent value="all" className="space-y-8">
+            <TabsContent value="all" className="space-y-6 md:space-y-8">
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
               >
                 {projects.map((project, index) => (
                   <motion.div key={index} variants={scaleUp}>
@@ -389,13 +467,13 @@ export default function Portfolio() {
                 ))}
               </motion.div>
             </TabsContent>
-            <TabsContent value="application" className="space-y-8">
+            <TabsContent value="application" className="space-y-6 md:space-y-8">
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
               >
                 {projects
                   .filter((p) => p.category === "Application")
@@ -406,13 +484,13 @@ export default function Portfolio() {
                   ))}
               </motion.div>
             </TabsContent>
-            <TabsContent value="web" className="space-y-8">
+            <TabsContent value="web" className="space-y-6 md:space-y-8">
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
               >
                 {projects
                   .filter((p) => p.category === "Site Web")

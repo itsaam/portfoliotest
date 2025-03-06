@@ -25,12 +25,12 @@ export default function Hero() {
 
   return (
     <section
-      className="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden relative"
+      className="pt-20 pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative"
       ref={ref}
     >
       {/* Decorative elements */}
-      <div className="absolute top-1/3 left-10 w-64 h-64 rounded-full bg-primary/5"></div>
-      <div className="absolute bottom-1/4 right-10 w-72 h-72 rounded-full bg-[#7C3AED]/5"></div>
+      <div className="absolute top-1/3 left-4 md:left-10 w-32 md:w-64 h-32 md:h-64 rounded-full bg-primary/5"></div>
+      <div className="absolute bottom-1/4 right-4 md:right-10 w-36 md:w-72 h-36 md:h-72 rounded-full bg-[#7C3AED]/5"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -44,13 +44,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
           >
             <div className="inline-block relative mb-4">
-              <span className="text-sm uppercase tracking-widest text-primary">
+              <span className="text-xs md:text-sm uppercase tracking-widest text-primary">
                 UI/UX Designer
               </span>
               <motion.span className="absolute -bottom-2 left-0 h-0.5 bg-primary w-full"></motion.span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 tracking-tight">
               Créer des
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                 {" "}
@@ -62,15 +62,15 @@ export default function Hero() {
                 mémorables
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
               Designer UI/UX passionné spécialisé dans la création d'interfaces
               intuitives et d'expériences utilisateur captivantes qui résolvent
               des problèmes réels.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
               <motion.button
                 onClick={() => scrollToSection("projects")}
-                className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full flex items-center"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground font-medium rounded-full flex items-center justify-center"
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -80,7 +80,7 @@ export default function Hero() {
 
               <motion.button
                 onClick={() => scrollToSection("contact")}
-                className="px-8 py-4 border border-[#7C3AED] text-[#7C3AED] font-medium rounded-full flex items-center"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border border-[#7C3AED] text-[#7C3AED] font-medium rounded-full flex items-center justify-center"
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -97,7 +97,7 @@ export default function Hero() {
             initial="hidden"
             animate={mainControls}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-20 relative"
+            className="mt-12 md:mt-20 relative px-4"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-[#7C3AED]/20 rounded-2xl opacity-70"></div>
             <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
