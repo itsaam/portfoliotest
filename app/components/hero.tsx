@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <section
-      className="pt-20 pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative"
+      className="pb-16 md:pb-20 lg:pb-28 overflow-hidden relative"
       ref={ref}
     >
       {/* Decorative elements */}
@@ -43,9 +43,9 @@ export default function Hero() {
             animate={mainControls}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
-            <div className="inline-block relative mb-4">
-              <span className="text-xs md:text-sm uppercase tracking-widest text-primary">
-                UI/UX Designer
+            <div className="inline-block relative mb-2">
+              <span className="text-xs md:text-sm tracking-wide text-primary">
+                Développeur Junior
               </span>
               <motion.span className="absolute -bottom-2 left-0 h-0.5 bg-primary w-full"></motion.span>
             </div>

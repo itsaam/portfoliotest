@@ -68,7 +68,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
           >
             <div className="inline-block relative mb-4">
-              <span className="text-sm uppercase tracking-widest text-primary">
+              <span className="text-sm  tracking-widest text-primary">
                 Développeur Junior
               </span>
               <motion.span

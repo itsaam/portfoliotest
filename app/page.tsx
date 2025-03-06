@@ -177,7 +177,7 @@ export default function Portfolio() {
   const smoothRotate2 = useSpring(rotate2, { stiffness: 100, damping: 30 });
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden pt-16">
+    <div className="min-h-screen bg-background overflow-hidden ">
       {/* Decorative background elements with parallax */}
       <motion.div
         className="fixed top-20 left-[5%] w-64 h-64 rounded-full bg-primary/5 -z-10"
@@ -314,7 +314,7 @@ export default function Portfolio() {
         {/* About Section */}
         <AnimatedSection
           id="about"
-          className="py-12 md:py-20 bg-white overflow-hidden relative scroll-mt-20"
+          className="py-12 md:py-20 bg-gray-50 overflow-hidden relative scroll-mt-20"
           variants={fadeIn}
         >
           <div className="container mx-auto px-4 md:px-6 relative z-10">
