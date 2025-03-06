@@ -646,7 +646,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="font-bold text-xl mb-4 md:mb-0"
           >
-            <span className="text-primary">A</span>S
+            <span className="text-primary">Samy</span> Abdelmalek
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
