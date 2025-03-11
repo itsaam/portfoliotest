@@ -31,7 +31,7 @@ import {
   useTransform,
   useSpring,
   useInView,
-  Variants,
+  type Variants,
 } from "framer-motion";
 import { useRef, useEffect } from "react";
 
@@ -188,7 +188,7 @@ export default function Portfolio() {
         style={{ y: smoothY2, rotate: smoothRotate2 }}
       />
 
-      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-[hsl(220,20%,97%)] backdrop-blur supports-[backdrop-filter]:bg-[hsl(220,20%,97%)]/60">
         <div className="container flex h-16 items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -228,7 +228,7 @@ export default function Portfolio() {
           {/* Bouton menu hamburger pour mobile */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
+            className="md:hidden p-2 hover:bg-gray- 00 rounded-lg"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -244,6 +244,15 @@ export default function Portfolio() {
           >
             <Button>
               <Download className="mr-2 h-4 w-4" /> CV
+            </Button>
+          </a>
+          <a
+            href="/icons/Cv_AbdelmalekSamy_LettreMotivation.pdf"
+            download
+            className="hidden md:inline-flex"
+          >
+            <Button>
+              <Download className="mr-2 h-4 w-4" /> Tableau synthèse
             </Button>
           </a>
         </div>
@@ -307,14 +316,14 @@ export default function Portfolio() {
         )}
       </header>
 
-      <main className="container py-10">
+      <main className="container py-4 md:py-10">
         {/* Hero Section */}
         <Hero />
 
         {/* About Section */}
         <AnimatedSection
           id="about"
-          className="py-12 md:py-20 bg-gray-50 overflow-hidden relative scroll-mt-20"
+          className="py-12 md:py-20 bg-background overflow-hidden relative scroll-mt-20"
           variants={fadeIn}
         >
           <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -390,7 +399,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-10">
             <motion.div
               variants={slideIn}
-              className="bg-muted rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
+              className="bg-background rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-xl font-semibold">Mes diplômes</h3>
@@ -412,7 +421,7 @@ export default function Portfolio() {
 
             <motion.div
               variants={slideInRight}
-              className="bg-muted rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
+              className="bg-background rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-xl font-semibold">Mes certifications</h3>
@@ -447,7 +456,7 @@ export default function Portfolio() {
           </motion.p>
 
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="mb-6 md:mb-8 flex flex-wrap gap-2">
+            <TabsList className="mb-6 md:mb-8 flex flex-wrap gap-2 bg-background">
               <TabsTrigger value="all">Tous</TabsTrigger>
               <TabsTrigger value="application">Applications</TabsTrigger>
               <TabsTrigger value="web">Sites Web</TabsTrigger>
