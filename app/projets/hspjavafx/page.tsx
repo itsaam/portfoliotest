@@ -117,7 +117,7 @@ export default function ProjectPage() {
           </div>
 
           <div>
-            <div className="bg-muted rounded-lg p-6 mb-6">
+            <div className="rounded-lg border p-6 mb-6">
               <h3 className="text-xl font-semibold mb-4">
                 Fonctionnalités Clés
               </h3>
@@ -131,7 +131,7 @@ export default function ProjectPage() {
               </ul>
             </div>
 
-            <div className="bg-muted rounded-lg p-6">
+            <div className="rounded-lg border p-6">
               <h3 className="text-xl font-semibold mb-4">
                 Technologies Utilisées
               </h3>

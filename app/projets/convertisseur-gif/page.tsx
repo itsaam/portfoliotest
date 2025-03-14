@@ -24,8 +24,6 @@ const project = {
       "Tkinter",
       "PIL (Python Imaging Library)",
       "PyAutoGUI",
-      "Requests",
-      "UUID",
     ],
     description:
       "Cette application de bureau permet aux utilisateurs de convertir facilement des fichiers GIF en formats PNG ou JPEG. L'interface intuitive offre des options de prévisualisation et de personnalisation pour obtenir exactement le résultat souhaité. L'application prend en charge la conversion par lots pour traiter plusieurs fichiers simultanément.",
@@ -123,7 +121,7 @@ export default function ProjectPage() {
           </div>
 
           <div>
-            <div className="bg-muted rounded-lg p-6 mb-6">
+            <div className="rounded-lg border p-6 mb-6">
               <h3 className="text-xl font-semibold mb-4">
                 Fonctionnalités Clés
               </h3>
@@ -137,7 +135,7 @@ export default function ProjectPage() {
               </ul>
             </div>
 
-            <div className="bg-muted rounded-lg p-6">
+            <div className="rounded-lg border p-6">
               <h3 className="text-xl font-semibold mb-4">
                 Technologies Utilisées
               </h3>

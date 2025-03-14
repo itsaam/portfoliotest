@@ -246,15 +246,6 @@ export default function Portfolio() {
               <Download className="mr-2 h-4 w-4" /> CV
             </Button>
           </a>
-          <a
-            href="/icons/Cv_AbdelmalekSamy_LettreMotivation.pdf"
-            download
-            className="hidden md:inline-flex"
-          >
-            <Button>
-              <Download className="mr-2 h-4 w-4" /> Tableau synthèse
-            </Button>
-          </a>
         </div>
 
         {/* Menu mobile */}
@@ -639,6 +630,20 @@ export default function Portfolio() {
                   className="hover:text-primary transition-colors"
                 >
                   github.com/itsaam
+                </a>
+              </motion.div>
+              <motion.div
+                variants={slideIn}
+                whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                className="flex items-center gap-3"
+              >
+                <Download className="h-5 w-5 text-primary" />
+                <a
+                  href="/icons/Tableau de synthèse - Epreuve E4.xlsx"
+                  download
+                  className="hover:text-primary transition-colors"
+                >
+                  Télécharger le tableau synthèse
                 </a>
               </motion.div>
             </motion.div>
