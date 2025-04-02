@@ -8,7 +8,7 @@ const project = {
   title: "HSPJAVAFX",
   description:
     "Version JavaFX de la Plateforme de Services de Santé, offrant une expérience utilisateur native et performante.",
-  image: "/icons/blue.png",
+  image: "/icons/hsp.png",
   category: "Application",
   slug: "hspjavafx",
   details: {

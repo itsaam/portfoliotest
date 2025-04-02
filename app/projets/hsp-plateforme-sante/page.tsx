@@ -8,7 +8,7 @@ const project = {
   title: "HSP - Plateforme de Services de Santé",
   description:
     "Une plateforme innovante connectant hôpitaux et professionnels de santé avec des fonctionnalités en temps réel.",
-  image: "/icons/blue.png",
+  image: "/icons/hsp.png",
   category: "Site Web",
   slug: "hsp-plateforme-sante",
   details: {

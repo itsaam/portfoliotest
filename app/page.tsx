@@ -683,7 +683,7 @@ const projects: Project[] = [
     title: "HSP - Plateforme de Services de Santé",
     description:
       "Une plateforme innovante connectant hôpitaux et professionnels de santé avec des fonctionnalités en temps réel.",
-    image: "/icons/blue.png",
+    image: "/icons/hsp.png",
     category: "Site Web",
     slug: "hsp-plateforme-sante",
     details: {
@@ -708,7 +708,7 @@ const projects: Project[] = [
     title: "Convertisseur GIF",
     description:
       "Un outil basé sur Python pour convertir des fichiers GIF en formats PNG ou JPEG avec une interface conviviale.",
-    image: "/icons/game.png",
+    image: "/icons/Convert.png",
     category: "Application",
     slug: "convertisseur-gif",
     details: {
@@ -758,7 +758,7 @@ const projects: Project[] = [
     title: "HSPJAVAFX",
     description:
       "Version JavaFX de la Plateforme de Services de Santé, offrant une expérience utilisateur native et performante.",
-    image: "/icons/blue.png",
+    image: "/icons/hsp.png",
     category: "Application",
     slug: "hspjavafx",
     details: {

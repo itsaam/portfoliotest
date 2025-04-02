@@ -8,7 +8,7 @@ const project = {
   title: "Convertisseur GIF",
   description:
     "Un outil basé sur Python pour convertir des fichiers GIF en formats PNG ou JPEG avec une interface conviviale.",
-  image: "/icons/game.png",
+  image: "/icons/Convert.png",
   category: "Application",
   slug: "convertisseur-gif",
   details: {
