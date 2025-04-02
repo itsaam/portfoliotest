@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Samy Abdelmalek | Développeur Junior",
     description:
       "Portfolio de Samy Abdelmalek, développeur junior passionné par la création d'applications web performantes et innovantes.",
-    url: "https://votre-domaine.com",
+    url: "https://samyabdelmalek.fr",
     siteName: "Portfolio de Samy Abdelmalek",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     creator: "@votre_twitter",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/fav.png",
   },
 };
 
