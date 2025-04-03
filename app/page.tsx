@@ -451,6 +451,7 @@ export default function Portfolio() {
               <TabsTrigger value="all">Tous</TabsTrigger>
               <TabsTrigger value="application">Applications</TabsTrigger>
               <TabsTrigger value="web">Sites Web</TabsTrigger>
+              <TabsTrigger value="bot">Bots</TabsTrigger>
             </TabsList>
             <TabsContent value="all" className="space-y-6 md:space-y-8">
               <motion.div
@@ -477,6 +478,23 @@ export default function Portfolio() {
               >
                 {projects
                   .filter((p) => p.category === "Application")
+                  .map((project, index) => (
+                    <motion.div key={index} variants={scaleUp}>
+                      <ProjectCard project={project} />
+                    </motion.div>
+                  ))}
+              </motion.div>
+            </TabsContent>
+            <TabsContent value="bot" className="space-y-6 md:space-y-8">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+              >
+                {projects
+                  .filter((p) => p.category === "Bot")
                   .map((project, index) => (
                     <motion.div key={index} variants={scaleUp}>
                       <ProjectCard project={project} />
@@ -752,6 +770,34 @@ const projects: Project[] = [
       ],
       description:
         "Nuage Air est un site web pour les aéroports qui permet aux voyageurs de réserver des vols, consulter les horaires en temps réel et gérer leurs réservations. Développé avec des technologies web traditionnelles, ce projet représente l'une de mes premières expériences en développement web.",
+    },
+  },
+  {
+    title: "RSS Bot pour Discord",
+    description:
+      "Un bot Python pour publier automatiquement les flux RSS dans des salons Discord. Idéal pour la veille technologique.",
+    image: "/icons/rss_bot.png",
+    category: "Bot",
+    slug: "rss_bot",
+    details: {
+      subtitle: "Automatisez votre veille avec un bot RSS léger et rapide",
+      features: [
+        "Récupération de plusieurs flux RSS en parallèle",
+        "Publication automatique à intervalles réguliers",
+        "Nettoyage du contenu HTML via BeautifulSoup",
+        "Détection intelligente des nouveaux articles",
+        "Personnalisation des salons Discord de destination",
+        "Logs détaillés des événements pour le suivi",
+      ],
+      technologies: [
+        "Python 3",
+        "discord.py",
+        "feedparser",
+        "BeautifulSoup4",
+        "asyncio, logging, datetime, hashlib",
+      ],
+      description:
+        "RSS Bot est un projet Python permettant de surveiller automatiquement plusieurs flux RSS et de publier les nouveaux articles dans des salons Discord configurés. Léger, rapide et personnalisable, il est parfait pour automatiser la veille technologique sur un serveur Discord, notamment grâce à son système de logs et sa détection intelligente d’articles déjà publiés.",
     },
   },
   {
