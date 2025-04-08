@@ -364,7 +364,7 @@ export default function Portfolio() {
                   {
                     icon: <Zap className="w-8 h-8 text-yellow-500" />,
                     title: "Tools",
-                    description: "Github, Git, Vagrant, Unity",
+                    description: "Github, Git, Vagrant, Unity, Grafana, Prometheus, Jenkins, AWS",
                   },
                 ].map((skill, index) => (
                   <motion.div
