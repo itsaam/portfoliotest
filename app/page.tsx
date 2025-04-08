@@ -349,23 +349,33 @@ export default function Portfolio() {
                   {
                     icon: <Code className="w-8 h-8 text-blue-500" />,
                     title: "Frontend",
-                    description: "React, HTML/CSS",
+                    description: "HTML5, CSS3, JavaScript, React",
                   },
                   {
                     icon: <Server className="w-8 h-8 text-green-500" />,
                     title: "Backend",
-                    description: "Python, PHP, Java",
+                    description: "Python, PHP, Java, C#, Laravel",
                   },
                   {
                     icon: <Database className="w-8 h-8 text-purple-500" />,
-                    title: "Database",
-                    description: "MongoDB, MySQL, MariaDB ",
+                    title: "Bases de données",
+                    description: "MySQL, MariaDB",
+                  },
+                  {
+                    icon: <Settings className="w-8 h-8 text-red-500" />,
+                    title: "Systèmes & Réseaux",
+                    description: "Debian, Ubuntu, Windows, Hyper-V, VirtualBox, Vagrant, Apache",
                   },
                   {
                     icon: <Zap className="w-8 h-8 text-yellow-500" />,
-                    title: "Tools",
-                    description: "Github, Git, Vagrant, Unity, Grafana, Prometheus, Jenkins, AWS",
+                    title: "Outils & DevOps",
+                    description: "Git, Github, Jenkins, Unity, AWS, Azure, Grafana, Prometheus",
                   },
+                  {
+                    icon: <Languages className="w-8 h-8 text-pink-500" />,
+                    title: "Langues",
+                    description: "Anglais (C1), Espagnol (A2)",
+                  },                  
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
