@@ -366,18 +366,20 @@ export default function Portfolio() {
                   {
                     icon: <Settings className="w-8 h-8 text-red-500" />,
                     title: "Systèmes & Réseaux",
-                    description: "Debian, Ubuntu, Windows, Hyper-V, VirtualBox, Vagrant, Apache",
+                    description:
+                      "Debian, Ubuntu, Windows, Hyper-V, VirtualBox, Vagrant, Apache",
                   },
                   {
                     icon: <Zap className="w-8 h-8 text-yellow-500" />,
                     title: "Outils & DevOps",
-                    description: "Git, Github, Jenkins, Unity, AWS, Azure, Grafana, Prometheus",
+                    description:
+                      "Git, Github, Jenkins, Unity, AWS, Azure, Grafana, Prometheus",
                   },
                   {
                     icon: <Languages className="w-8 h-8 text-pink-500" />,
                     title: "Langues",
                     description: "Anglais (C1), Espagnol (A2)",
-                  },                  
+                  },
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
@@ -464,7 +466,25 @@ export default function Portfolio() {
               <TabsTrigger value="application">Applications</TabsTrigger>
               <TabsTrigger value="web">Sites Web</TabsTrigger>
               <TabsTrigger value="bot">Bots</TabsTrigger>
+              <TabsTrigger value="extension">Extensions</TabsTrigger>
             </TabsList>
+            <TabsContent value="extension" className="space-y-6 md:space-y-8">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+              >
+                {projects
+                  .filter((p) => p.category === "Extension")
+                  .map((project, index) => (
+                    <motion.div key={index} variants={scaleUp}>
+                      <ProjectCard project={project} />
+                    </motion.div>
+                  ))}
+              </motion.div>
+            </TabsContent>
             <TabsContent value="all" className="space-y-6 md:space-y-8">
               <motion.div
                 variants={staggerContainer}
@@ -810,6 +830,35 @@ const projects: Project[] = [
       ],
       description:
         "RSS Bot est un projet Python permettant de surveiller automatiquement plusieurs flux RSS et de publier les nouveaux articles dans des salons Discord configurés. Léger, rapide et personnalisable, il est parfait pour automatiser la veille technologique sur un serveur Discord, notamment grâce à son système de logs et sa détection intelligente d’articles déjà publiés.",
+    },
+  },
+  {
+    title: "YouTube Cleaner – Extension Chrome",
+    description:
+      "Une extension Chrome pour épurer l'interface YouTube en supprimant les Shorts, actualités, pubs et autres éléments distrayants.",
+    image: "/icons/youtube_cleaner.png",
+    category: "Extension",
+    slug: "youtube_cleaner",
+    details: {
+      subtitle:
+        "Améliorez votre expérience YouTube avec une interface minimaliste",
+      features: [
+        "Suppression automatique des Shorts, actualités et autres contenus indésirables",
+        "Optimisation de la lisibilité et de la concentration sur les vidéos longues",
+        "Observateur de mutations pour s'adapter aux changements dynamiques de YouTube",
+        "Statistiques internes pour suivre les éléments supprimés",
+        "Système de throttling pour des performances optimales",
+        "Installation rapide depuis le Chrome Web Store",
+      ],
+      technologies: [
+        "JavaScript",
+        "Chrome Extension API",
+        "MutationObserver",
+        "DOM manipulation",
+        "Web performance optimization",
+      ],
+      description:
+        "YouTube Cleaner est une extension Chrome développée pour offrir une expérience plus propre et productive sur YouTube. Elle supprime automatiquement les éléments superflus tels que les Shorts, les actualités et autres distractions grâce à un système d'observation en temps réel de la page. L'extension utilise également un throttling intelligent et collecte des statistiques pour permettre à l'utilisateur de visualiser son impact. Disponible gratuitement sur le Chrome Web Store.",
     },
   },
   {
